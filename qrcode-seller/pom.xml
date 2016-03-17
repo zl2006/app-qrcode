@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.yy</groupId>
+		<artifactId>home</artifactId>
+		<version>1.0</version>
+		<relativePath>../../yy-home/pom.xml</relativePath>
+	</parent>
+    	<artifactId>qrcode-seller</artifactId>
+    	<packaging>pom</packaging>
+    	<name>qrcode-seller</name>
+	 
+
+	<!--模块声明-->
+    	<modules>
+		<module>./seller-model/dto</module>			<!-- 模型层，数据传输对象dto -->
+		<module>./seller-model/model</module>			<!-- 模型层，业务实体对象 -->
+		<module>./seller-dao</module>				<!-- 数据访问层 -->	
+	
+		<module>./seller-service/interface</module>		<!-- 业务层, 服务接口模块 -->
+		<module>./seller-service/activity</module>		<!-- 业务层, 活动模块 -->
+		<module>./seller-service/qrcode</module>			<!-- 业务层, 码模块 -->
+		<module>./seller-service/system</module>			<!-- 业务层, 系统配置层 -->
+		
+
+		<module>./seller-web/action</module>			<!-- WEB层, action -->	
+		<module>./seller-web/page</module>			<!-- WEB层, page -->	
+		<!--module>./seller-mq</module-->			<!-- 消息层 -->
+		<!--module>./seller-task</module-->			<!-- 任务层 -->
+    	</modules>
+</project>

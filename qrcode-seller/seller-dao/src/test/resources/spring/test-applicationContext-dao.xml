@@ -10,31 +10,32 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 
+	<!-- 扫描定义的ｄａｏ -->
+	<context:component-scan base-package="org.yy.qrcodeseller.dao"></context:component-scan>
+
 	<!--数据源定义 -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
-		<property name="driverClass" value="com.mysql.jdbc.Driver" />
-		<property name="url"
-			value="jdbc:mysql://localhost:3306/qrcode?useUnicode=true&amp;characterEncoding=UTF-8" />
-		<property name="username" value="qrcode_admin" />
-		<property name="password" value="qrcode_admin" />
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
 	</bean>
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations" value="classpath*:sqlmap/mapping-*.xml" />
-		<property name="configLocation" value="classpath:sqlmap/mybatis-app.xml"  ></property>
+		<property name="configLocation" value="classpath:sqlmap/mybatis-app.xml"></property>
 	</bean>
-	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" scope="prototype">
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"
+		scope="prototype">
 		<constructor-arg index="0" ref="sqlSessionFactory"></constructor-arg>
 	</bean>
-	
-	<!-- 扫描定义的ｄａｏ -->
-	<context:component-scan base-package="org.yy.marketseller.dao"></context:component-scan>
+
 
 	<!-- 数据准备 -->
-	<bean class="org.yy.marketseller.dao.InitData" init-method="init">
+	<bean class="org.yy.qrcodeseller.dao.InitData" init-method="init">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
-	
+
 	<import resource="classpath*:spring/applicationContext*.xml" />
 </beans>

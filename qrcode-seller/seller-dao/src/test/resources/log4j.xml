@@ -43,21 +43,13 @@
 		<level value="debug" />
 	</logger>
 	<!-- mybatis的配置是将mapping文件中的namespace写入 -->
-	<logger name="SYSTEM">
-		<level value="debug" />
-	</logger> 
 	<logger name="PRODUCT">
 		<level value="debug" />
 	</logger> 
-	<logger name="ACT">
-		<level value="debug" />
-	</logger> 
-	<logger name="MEMBER">
-		<level value="debug" />
-	</logger>
+
 
 	<!-- 为单独的类或包指定日志配置 -->
-	<logger name="org.yy.marketseller.dao">
+	<logger name="org.yy.qrcodeseller.dao">
 		<level value="info" />
 		<appender-ref ref="myConsole" />
 	</logger>

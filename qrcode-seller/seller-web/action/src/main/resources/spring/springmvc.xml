@@ -10,7 +10,7 @@
        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
 	<!-- 扫描java包中相关的mvc元注解 -->
-	<context:component-scan base-package="org.yy.marketseller.controller"></context:component-scan>
+	<context:component-scan base-package="org.yy.qrcodeseller.controller"></context:component-scan>
     
     <!-- 配置后，不会被springmvc(web.xml中配置的DispatcherServlet)处理 -->
 	<mvc:resources mapping="/resources/**" location="/WEB-INF/resources/" /> 
@@ -29,8 +29,8 @@
 	<bean id="document" class="org.yy.framework.document.controller.DocumentController">
 		<constructor-arg index="0">
 			<list>
-				<value>org.yy.marketseller.model</value>
-				<value>org.yy.marketseller.dto</value>
+				<value>org.yy.qrcodeseller.model</value>
+				<value>org.yy.qrcodeseller.dto</value>
 			</list>
 		</constructor-arg>
 	</bean>

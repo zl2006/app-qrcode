@@ -16,17 +16,6 @@
 	<context:component-scan base-package="org.yy.marketseller.dao"></context:component-scan>
 	<context:component-scan base-package="org.yy.marketseller.service"></context:component-scan>
 
-	<!-- 环境变量引入 -->
-	<bean id="envPropertyLocator"
-		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="fileEncoding" value="UTF-8"></property>
-		<property name="locations">
-			<list>
-				<value>classpath:jdbc.properties</value>
-				<value>classpath:app.properties</value>
-			</list>
-		</property>
-	</bean>
 
 	<!-- 数据源配置 -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
@@ -70,7 +59,8 @@
 		<property name="configLocation" value="classpath:sqlmap/mybatis-app.xml"></property>
 		<property name="mapperLocations" value="classpath*:sqlmap/mapping-*.xml" />
 	</bean>
-	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" scope="prototype">
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"
+		scope="prototype">
 		<constructor-arg index="0" ref="sqlSessionFactory"></constructor-arg>
 	</bean>
 
@@ -102,22 +92,10 @@
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-	 <tx:annotation-driven transaction-manager="txManager" proxy-target-class="true"/>  
+	<tx:annotation-driven transaction-manager="txManager"
+		proxy-target-class="true" />
 	<!-- end -->
 
-
-	<!-- 国际化 start -->
-	<!-- 设置国际化属性文件及其默认编码 注意：未设置p:defaultEncoding="UTF-8"前页面出现过乱码 -->
-	<bean id="messageSource"
-		class="org.springframework.context.support.ResourceBundleMessageSource">
-		<property name="basenames">
-			<list>
-				<value>message</value>
-			</list>
-		</property>
-		<property name="useCodeAsDefaultMessage" value="true" />
-	</bean>
-	<!-- 国际化 end -->
 
 
 	<!-- cache -->
@@ -142,8 +120,9 @@
 
 
 	<!-- token -->
-	<!-- <bean id="tokenStore" class="org.yy.framework.base.token.SessionTokenStore"></bean> 
-		<bean id="tokenHandler" class="org.yy.framework.base.token.WebTokenHandler"> 
-		<constructor-arg ref="tokenStore"></constructor-arg> </bean> -->
+	<bean id="tokenStore" class="org.yy.framework.base.token.SessionTokenStore"></bean>
+	<bean id="tokenHandler" class="org.yy.framework.base.token.WebTokenHandler">
+		<constructor-arg ref="tokenStore"></constructor-arg>
+	</bean>
 
 </beans>

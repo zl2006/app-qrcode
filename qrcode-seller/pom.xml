@@ -7,7 +7,7 @@
 		<version>1.0</version>
 		<relativePath>../../yy-home/pom.xml</relativePath>
 	</parent>
-    	<artifactId>qrcode-seller</artifactId>
+    	<artifactId>org.yy.qrcodeseller</artifactId>
     	<packaging>pom</packaging>
     	<name>qrcode-seller</name>
 	 

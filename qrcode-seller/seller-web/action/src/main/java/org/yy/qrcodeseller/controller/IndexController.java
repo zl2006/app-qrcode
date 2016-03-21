@@ -6,7 +6,7 @@
  * 修改时间:  2015年5月15日
  * 修改内容:  <修改内容>
  */
-package org.yy.marketseller.controller;
+package org.yy.qrcodeseller.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

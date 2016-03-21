@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>增加系统配置信息</title>
+<title>开店助手-超级世界</title>
 </head>
 <body>
-	增加系统配置信息
+
 </body>
 </html>

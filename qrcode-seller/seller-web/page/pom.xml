@@ -19,7 +19,14 @@
 			<artifactId>web-action</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>org.yy.app-sso</groupId>
+			<artifactId>sso-client</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>

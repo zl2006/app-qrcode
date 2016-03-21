@@ -53,6 +53,42 @@
 		<url-pattern>/druid/*</url-pattern>
 	</servlet-mapping>
 	<!-- ********************************************************************** -->
+	
+	
+		<!-- **********************************单点登录Filter*************************************************** -->
+	<filter>
+		<filter-name>SSOFilter</filter-name>
+		<filter-class>org.yy.sso.client.SSOFilter</filter-class>
+		<init-param>
+			<param-name>excludes</param-name>
+			<param-value>/accessdenied.jsp,/error404.jsp,/error500.jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ssoUrl</param-name>
+			<param-value>http://localhost:8086/</param-value>
+		</init-param>
+		<init-param>
+			<param-name>returnUrl</param-name>
+			<param-value>http://localhost:8080/</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>SSOFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>SSOFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>SSOFilter</filter-name>
+		<url-pattern>*.json</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>SSOFilter</filter-name>
+		<url-pattern>/</url-pattern>
+	</filter-mapping>
+	<!-- ************************************************************************************* -->
 
 
 	<!-- ***********************************spring 配置初始化 *********************************** -->

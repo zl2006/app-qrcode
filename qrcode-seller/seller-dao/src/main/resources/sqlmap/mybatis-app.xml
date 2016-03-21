@@ -22,63 +22,14 @@
 
 
 	<typeAliases>
-	
-		<!-- 系统配置 start -->
-		<typeAlias alias="TA-SYSCONFIG" type="org.yy.marketseller.model.system.SysConfig" />
-		<typeAlias alias="TA-SYSCONFIG-DTO" type="org.yy.marketseller.dto.system.SysConfigDTO" />
-		<!-- 系统配置 end -->
-		
-		
-		<!-- SAAS服务模块 start -->
-		<typeAlias alias="TA-SERVICECATEGORY" type="org.yy.marketseller.model.saas.ServiceCategory" />
-		<typeAlias alias="TA-SERVICEDEFINE" type="org.yy.marketseller.model.saas.ServiceDefine" />
-		<typeAlias alias="TA-SERVICEDEFINE-DTO" type="org.yy.marketseller.dto.saas.ServiceDefineDTO" />
-		<typeAlias alias="TA-SERVICEVERSION" type="org.yy.marketseller.model.saas.ServiceVersion" />
-		<typeAlias alias="TA-SERVICEORDER" type="org.yy.marketseller.model.saas.ServiceOrder" />
-		<typeAlias alias="TA-SERVICEORDER-DTO" type="org.yy.marketseller.dto.saas.ServiceOrderDTO" />
-		<!-- SAAS服务模块 end -->
-		
-		
-		<!-- 产品模块 start -->
-		<typeAlias alias="TA-CATEGORY" type="org.yy.marketseller.model.product.Category" />
-		<typeAlias alias="TA-CATEGORY-DTO" type="org.yy.marketseller.dto.product.CategoryDTO" />
-		<typeAlias alias="TA-CATEATTRGROUP" type="org.yy.marketseller.model.product.CateAttrGroup" />
-		<typeAlias alias="TA-CATEGORYATTR" type="org.yy.marketseller.model.product.CategoryAttr" />
-		<typeAlias alias="TA-PRODUCT" type="org.yy.marketseller.model.product.Product" />
-		<typeAlias alias="TA-PRODUCT-DTO" type="org.yy.marketseller.dto.product.ProductDTO" />
-		<typeAlias alias="TA-PRODUCTEXTATTR" type="org.yy.marketseller.model.product.ProductExtAttr" />
-		<!-- 产品模块 end -->
-		
-		
-		<!-- 活动模型 -->
-		<typeAlias alias="TA-PRIZETYPE" type="org.yy.marketseller.model.activity.PrizeType" />
-		<typeAlias alias="TA-PRIZEPOOL" type="org.yy.marketseller.model.activity.PrizePool" />
-		<typeAlias alias="TA-PRIZEPOOL-DTO" type="org.yy.marketseller.dto.activity.PrizePoolDTO" />
-		<typeAlias alias="TA-PRIZEITEM" type="org.yy.marketseller.model.activity.PrizeItem" />
-		<typeAlias alias="TA-ACTIVITY" type="org.yy.marketseller.model.activity.Activity" />
-		<typeAlias alias="TA-ACTIVITY-DTO" type="org.yy.marketseller.dto.activity.ActivityDTO" />
-		<typeAlias alias="TA-ACTATTEND" type="org.yy.marketseller.model.activity.ActAttend" />
-		<typeAlias alias="TA-ACTATTEND-DTO" type="org.yy.marketseller.dto.activity.ActAttendDTO" />
-		<typeAlias alias="TA-ACTATTENDFAILURE" type="org.yy.marketseller.model.activity.ActAttendFailure" />
-		<typeAlias alias="TA-ACTATTENDFAILURE-DTO" type="org.yy.marketseller.dto.activity.ActAttendFailureDTO" />
-		<typeAlias alias="TA-ACTTIMES" type="org.yy.marketseller.model.activity.ActTimes" />
-		<typeAlias alias="TA-ACTPRODUCTS" type="org.yy.marketseller.model.activity.ActProducts" />
-		<!-- 活动模型 end-->
-		
-		<!-- 会员模块 -->
-		<typeAlias alias="TA-BUYER" type="org.yy.marketseller.model.member.Buyer" />
-		<typeAlias alias="TA-BUYER-DTO" type="org.yy.marketseller.dto.member.BuyerDTO" />
-		<typeAlias alias="TA-SELLER" type="org.yy.marketseller.model.member.Seller" />
-		<typeAlias alias="TA-SELLER-DTO" type="org.yy.marketseller.dto.member.SellerDTO" />
-		<typeAlias alias="TA-BUYERINFO" type="org.yy.marketseller.model.member.BuyerInfo" />
-		<typeAlias alias="TA-BUYERINFO-DTO" type="org.yy.marketseller.dto.member.BuyerInfoDTO" />
-		<typeAlias alias="TA-BUYERDYNAMIC" type="org.yy.marketseller.model.member.BuyerDynamic" />
-		<typeAlias alias="TA-SELLERSHOP" type="org.yy.marketseller.model.member.SellerShop" />
-		<typeAlias alias="TA-BUYERMAPPING" type="org.yy.marketseller.model.member.BuyerMapping" />
-		<typeAlias alias="TA-SELLERAUTH" type="org.yy.marketseller.model.member.SellerAuth" />
-		<!-- 会员模块 end-->
-		
-		
+
+		<!-- 产品管理 start -->
+		<typeAlias alias="TA-CATEGORY"
+			type="org.yy.qrcodeseller.model.product.Category" />
+		<!-- 产品管理 end -->
+
+
+
 	</typeAliases>
-	
+
 </configuration>

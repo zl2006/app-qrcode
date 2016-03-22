@@ -15,13 +15,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href='${applicationScope.pageConfig["resources.path"] }/css/pure/0.6.0/pure-min.css'>
     <link rel="stylesheet" href='${applicationScope.pageConfig["resources.path"] }/css/site/site.css'>
-    <link rel="stylesheet" href='${applicationScope.pageConfig["resources.path"] }/app/qrcode-sso/css/site/login.css'>
+    <link rel="stylesheet" href='${applicationScope.pageConfig["resources.path"] }/app/qrcode-sso/css/login.css'>
 </head>
 <body>
 <!-- 头部-->
 <div id="top"> <!-- logo,搜索码/会员区域 -->
     <a class="logo-main">超级营销</a>
-    <img src='${applicationScope.pageConfig["resources.path"] }/app/qrcode-sso/images/site/split.png' class="logo-split" alt="split" style="width:1px">
+    <img src='${applicationScope.pageConfig["resources.path"] }/app/qrcode-sso/images/split.png' class="logo-split" alt="split" style="width:1px">
     <a class="logo-second">码世界</a>
     <div class="info">
         <a href="#">服务市场</a> | <a href="#">帮助中心</a>
@@ -32,7 +32,7 @@
 <div id="content_wrap">
     <div id="content">
         <div id="description">
-            <img src='${applicationScope.pageConfig["resources.path"] }/app/qrcode-sso/images/site/login.jpg' width="500px">
+            <img src='${applicationScope.pageConfig["resources.path"] }/app/qrcode-sso/images/login.jpg' width="500px">
         </div>
         <div id="login">
             <form action="${basePath}/dologin.do" method="post">

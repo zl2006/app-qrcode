@@ -31,7 +31,7 @@ public class IndexController extends AbstractController {
     
     @RequestMapping("/")
     public ModelAndView  idx(){
-        return new ModelAndView("index");
+        return new ModelAndView("tiles_idx/index");
     }
     
 }

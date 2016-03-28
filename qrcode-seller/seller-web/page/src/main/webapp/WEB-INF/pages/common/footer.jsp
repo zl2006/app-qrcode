@@ -10,6 +10,6 @@
 <script type="text/javascript">
     requirejs(['jqsuperslide','sticky'], function (slide,sticky) {
         sticky("#menu", {top:0, left:0});
-        slide("#site-menu").slide({ type: "menu", titCell: ".menu-item", targetCell: ".menu-item-sub", delayTime: 400, triggerTime: 0, returnDefault: false  });
+        slide("#site-menu").slide({ type: "menu", titCell: ".menu-item", targetCell: ".menu-item-sub", delayTime: 400, triggerTime: 200, returnDefault: false  });
     })
 </script>

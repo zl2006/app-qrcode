@@ -44,9 +44,7 @@ public class InitData {
         isr = new InputStreamReader(CategoryDao.class.getClassLoader().getResourceAsStream("sql/initdata.sql"));
         r.runScript(isr);
         
-        isr = null;
-        
-        connect.close();
+        r.closeConnection();
         
     }
     

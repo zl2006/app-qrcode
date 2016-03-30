@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<!-- Default Main Template -->
+	<definition name="base.definition">
+		<put-attribute name="title" value="超级营销-码世界" type="string" />
+		<put-attribute name="top" value="/WEB-INF/pages/common/top.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/pages/common/menu.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/pages/common/footer.jsp" />
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<!-- 首页 -->
+	<definition name="tiles_idx/*" extends="base.definition"
+		template="/WEB-INF/pages/common/layout_idx.jsp">
+		<put-attribute name="banner" value="/WEB-INF/pages/common/banner.jsp" />
+		<put-attribute name="body" value="/WEB-INF/pages/{1}.jsp" />
+	</definition>
+
+	<!-- 其它页 -->
+	<definition name="tiles_base/*/*" extends="base.definition"
+		template="/WEB-INF/pages/common/layout_base.jsp">
+		<put-attribute name="body" value="/WEB-INF/pages/{1}/{2}.jsp" />
+	</definition>
+
+
+</tiles-definitions> 

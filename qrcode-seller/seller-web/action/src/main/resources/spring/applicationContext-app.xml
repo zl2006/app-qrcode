@@ -12,10 +12,8 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
-	<!-- 注入dao和service -->
-	<context:component-scan base-package="org.yy.marketseller.dao"></context:component-scan>
-	<context:component-scan base-package="org.yy.marketseller.service"></context:component-scan>
-
+	<!-- 注入service -->
+	<context:component-scan base-package="org.yy.qrcodeseller.service"></context:component-scan>
 
 	<!-- 数据源配置 -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
@@ -53,16 +51,22 @@
 		<property name="filters" value="stat" />
 	</bean>
 	<!-- end -->
-
+	<!-- mybatis配置 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="configLocation" value="classpath:sqlmap/mybatis-app.xml"></property>
 		<property name="mapperLocations" value="classpath*:sqlmap/mapping-*.xml" />
+		<property name="configLocation" value="classpath:sqlmap/mybatis-app.xml"></property>
 	</bean>
-	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"
-		scope="prototype">
-		<constructor-arg index="0" ref="sqlSessionFactory"></constructor-arg>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="org.yy.qrcodeseller.dao.product" />
 	</bean>
+	<!-- 分页拦截机制 -->
+	<bean id="pageInterceptor" class="org.yy.framework.base.dao.PageInterceptor"></bean>
+	<aop:config proxy-target-class="false">
+		<aop:pointcut id="pagePointCut"
+			expression="execution(* org.yy.qrcodeseller.dao..*(..))" />
+		<aop:advisor advice-ref="pageInterceptor" pointcut-ref="pagePointCut" />
+	</aop:config>
 
 
 	<!-- 事务配置 -->
@@ -93,22 +97,9 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	<tx:annotation-driven transaction-manager="txManager"
-		proxy-target-class="true" />
+		proxy-target-class="false" />
 	<!-- end -->
 
-
-
-	<!-- cache -->
-	<!-- <import resource="classpath*:simplesm-context.xml" /> <aop:aspectj-autoproxy 
-		/> <context:annotation-config /> <bean name="defaultMemcachedClient" class="com.google.code.ssm.CacheFactory"> 
-		<property name="cacheClientFactory"> <bean name="cacheClientFactory" class="com.google.code.ssm.providers.xmemcached.MemcacheClientFactoryImpl" 
-		/> </property> <property name="addressProvider"> <bean class="com.google.code.ssm.config.DefaultAddressProvider"> 
-		<property name="address" value="${cache.address}" /> </bean> </property> 
-		<property name="configuration"> <bean class="com.google.code.ssm.providers.xmemcached.XMemcachedConfiguration"> 
-		<property name="consistentHashing" value="true" /> <property name="optimizeGet" 
-		value="true"></property> <property name="connectionPoolSize" value="${cache.poolsize}"></property> 
-		</bean> </property> </bean> <bean class="com.google.code.ssm.Settings"> <property 
-		name="order" value="500" /> </bean> -->
 
 
 	<!-- 性能监控日志 -->

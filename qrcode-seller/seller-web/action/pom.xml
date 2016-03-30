@@ -29,6 +29,11 @@
 			<artifactId>service-system</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.yy.qrcodeseller</groupId>
+			<artifactId>service-product</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 
 
 		<dependency>

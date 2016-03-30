@@ -8,10 +8,14 @@
 */
 package org.yy.qrcodeseller.controller;
 
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.yy.framework.base.controller.AbstractController;
+import org.yy.qrcodeseller.dto.product.ProductDto;
+import org.yy.qrcodeseller.service.product.ProductService;
 
 /**
 * 产品控制器
@@ -24,6 +28,9 @@ import org.yy.framework.base.controller.AbstractController;
 @RequestMapping("/product")
 public class ProductController extends AbstractController {
     
+    @Resource
+    private ProductService productService;
+    
     private String moduleName;
     
     public ProductController() {
@@ -31,8 +38,8 @@ public class ProductController extends AbstractController {
     }
     
     @RequestMapping("/list")
-    public ModelAndView list() {
-        return new ModelAndView(moduleName + "list");
+    public ModelAndView list(ProductDto productDto) {
+        return processSuccess(moduleName + "list", productService.findProduct(productDto));
     }
     
     /** {@inheritDoc} */

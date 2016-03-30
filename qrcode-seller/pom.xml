@@ -20,9 +20,9 @@
 	
 		<module>./seller-service/interface</module>		<!-- 业务层, 服务接口模块 -->
 		<module>./seller-service/activity</module>		<!-- 业务层, 活动模块 -->
-		<module>./seller-service/qrcode</module>			<!-- 业务层, 码模块 -->
-		<module>./seller-service/system</module>			<!-- 业务层, 系统配置层 -->
-		
+		<module>./seller-service/qrcode</module>		<!-- 业务层, 码模块 -->
+		<module>./seller-service/system</module>		<!-- 业务层, 系统配置层 -->
+		<module>./seller-service/product</module>		<!-- 业务层, 产品管理层 -->
 
 		<module>./seller-web/action</module>			<!-- WEB层, action -->	
 		<module>./seller-web/page</module>			<!-- WEB层, page -->	

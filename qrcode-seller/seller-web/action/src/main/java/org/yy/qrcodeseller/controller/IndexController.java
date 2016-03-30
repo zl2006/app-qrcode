@@ -1,11 +1,11 @@
- /*
- * 文 件 名:  IndexController.java
- * 版    权:  YY Technologies Co., Ltd. Copyright 2012-2013,  All rights reserved
- * 描    述:  首页控制器
- * 修 改 人:  zhouliang
- * 修改时间:  2015年5月15日
- * 修改内容:  <修改内容>
- */
+/*
+* 文 件 名:  IndexController.java
+* 版    权:  YY Technologies Co., Ltd. Copyright 2012-2013,  All rights reserved
+* 描    述:  首页控制器
+* 修 改 人:  zhouliang
+* 修改时间:  2015年5月15日
+* 修改内容:  <修改内容>
+*/
 package org.yy.qrcodeseller.controller;
 
 import org.springframework.stereotype.Controller;
@@ -26,11 +26,10 @@ public class IndexController extends AbstractController {
     /** {@inheritDoc} */
     @Override
     protected void setModuleName() {
-        
     }
     
     @RequestMapping("/")
-    public ModelAndView  idx(){
+    public ModelAndView idx() {
         return new ModelAndView("tiles_idx/index");
     }
     

@@ -3,7 +3,7 @@
 <!--菜单区域-->
 <div id="menu">
     <ul id="site-menu">
-        <li class="select menu-item"><a href="index.html">首页</a></li>
+        <li class="select menu-item"><a href="/">首页</a></li>
         <li class="menu-item">
             <span><a href="activity/list.html">互动营销</a></span>
             <div class="menu-item-sub menu-service">
@@ -53,7 +53,7 @@
             <span><a href="#">产品与码管理</a></span>
             <ul class="menu-item-sub">
                 <li><a href="#">新增产品</a></li>
-                <li><a href="#">产品列表</a></li>
+                <li><a href="/product/list">产品列表</a></li>
                 <li><a href="#">创建码</a></li>
             </ul>
         </li>

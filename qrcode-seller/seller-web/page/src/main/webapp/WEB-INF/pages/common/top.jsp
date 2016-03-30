@@ -16,7 +16,7 @@
 		<button class="pure-button button-secondary">搜索</button>
 	</form>
 	<div class="info">
-		<a>服务市场</a> | <a>帮助中心</a> | <a href="login.html">退出</a><br> <a>欢迎liangzhou20066!</a>
+		<a>服务市场</a> | <a>帮助中心</a> | <a href="login.html">退出</a><br> <a>liangzhou20066</a> | <a href="login.html">个人中心</a>
 	</div>
 </div>
 <!--top end-->

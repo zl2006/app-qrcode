@@ -39,6 +39,10 @@ public class InitData {
             new InputStreamReader(CategoryDao.class.getClassLoader().getResourceAsStream("sql/createtable.sql"));
         r.runScript(isr);
         
+        isr =
+            new InputStreamReader(CategoryDao.class.getClassLoader().getResourceAsStream("sql/initdata.sql"));
+        r.runScript(isr);
+        
     }
     
     /**

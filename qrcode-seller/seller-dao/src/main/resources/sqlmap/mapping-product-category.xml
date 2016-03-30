@@ -2,7 +2,7 @@
 <!DOCTYPE mapper    
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="PRODUCT">
+<mapper namespace="org.yy.qrcodeseller.dao.product.CategoryDao">
 
 	<resultMap id="RM-CATEGORY" type="TA-CATEGORY">
 		<result property="categoryID" column="CATEGORY_ID" />
@@ -53,19 +53,15 @@
 	
 	
 	<!-- 创建类目 -->
-	<insert id="INSERT_CATEGORY" parameterType="TA-CATEGORY">
-		INSERT INTO TB_PQ_CATEGORY  ( CATEGORY_ID , CODE, NAME, PARENT_ID, 
+	<insert id="insertCategory" parameterType="TA-CATEGORY" useGeneratedKeys="true" keyProperty="categoryID">
+		INSERT INTO TB_PQ_CATEGORY  ( CODE, NAME, PARENT_ID, 
 			IS_LEAF, STATUS, HOLD1, METO, CREATE_TIME, UPDATE_TIME) 
-		VALUES (#{categoryID},   #{code}, #{name},  #{parentID},  #{isLeaf}, 
-		        #{status},  #{hold1}, #{meto}, #{createTime}, #{updateTime}) 
-	   	<selectKey resultType="java.lang.Integer" keyProperty="categoryID">  
-        	SELECT LAST_INSERT_ID() AS CATEGORY_ID 
-	    </selectKey>
+		VALUES ( #{code}, #{name},  #{parentID},  #{isLeaf},  #{status},  #{hold1}, #{meto}, #{createTime}, #{updateTime}) 
 	</insert>
 
 
 	<!-- 更新类目 -->
-	<update id="UPDATE_CATEGORY" parameterType="TA-CATEGORY">
+	<update id="updateCategory" parameterType="TA-CATEGORY">
 		UPDATE TB_PQ_CATEGORY SET NAME = #{name}, PARENT_ID = #{parentID},
 			IS_LEAF = #{isLeaf}, STATUS = #{status}, HOLD1 = #{hold1},METO = #{meto}, UPDATE_TIME= #{updateTime}
 		WHERE CATEGORY_ID = #{categoryID}
@@ -73,21 +69,21 @@
 
 
 	<!-- 根据配置ID获取类目信息 -->
-	<select id="FIND_CATEGORY_BY_ID" parameterType="int"
+	<select id="findCategoryByID" parameterType="int"
 		resultMap="RM-CATEGORY">
 		<include refid="SQL_SELECT_CATEGORY" /> WHERE a.CATEGORY_ID = #{value}
 	</select>
 	
 	
 	<!-- 根据配置CODE获取类目信息 -->
-	<select id="FIND_CATEGORY_BY_CODE" parameterType="string"
+	<select id="findCategoryByCode" parameterType="string"
 		resultMap="RM-CATEGORY">
 		<include refid="SQL_SELECT_CATEGORY" /> WHERE a.CODE = #{value}
 	</select>
 
 	
 	<!-- 删除类目 -->
-	<delete id="DELETE_CATEGORY" parameterType="int">
+	<delete id="deleteCategoryByID" parameterType="int">
 		DELETE FROM TB_PQ_CATEGORY WHERE CATEGORY_ID = #{value}
 	</delete>
 	

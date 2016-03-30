@@ -8,8 +8,6 @@
 */
 package org.yy.qrcodeseller.dao.product;
 
-import org.springframework.stereotype.Repository;
-import org.yy.framework.base.dao.AbstractMyBatisDao;
 import org.yy.qrcodeseller.model.product.Category;
 
 /**
@@ -19,10 +17,40 @@ import org.yy.qrcodeseller.model.product.Category;
 * @version  [1.0, 2016年3月21日]
 * @since  [qrcodeseller/1.0]
 */
-@Repository("categoryDao")
-public class CategoryDao extends AbstractMyBatisDao {
+public interface CategoryDao {
     
-    public Category findCategory(Integer categoryID) {
-        return sqlSession.selectOne("PRODUCT.FIND_CATEGORY_BY_ID", categoryID);
-    }
+    /**
+     * 根据类目ID查询类目详情
+     * @param categoryID 类目ID
+     * @return 类目
+     */
+    public Category findCategoryByID(Integer categoryID);
+    
+    /**
+     * 根据类目ID查询类目详情
+     * @param code 类目编码
+     * @return 类目
+     */
+    public Category findCategoryByCode(String code);
+    
+    /**
+     * 插入类目
+     * @param catetory 类目
+     * @return 记录数
+     */
+    public Integer insertCategory(Category category);
+    
+    /**
+     * 更新类目
+     * @param category 类目
+     * @return 记录数
+     */
+    public Integer updateCategory(Category category);
+    
+    /**
+     * 删除类目
+     * @param code 类目code
+     * @return 记录数
+     */
+    public Integer deleteCategoryByID(Integer categoryID);
 }

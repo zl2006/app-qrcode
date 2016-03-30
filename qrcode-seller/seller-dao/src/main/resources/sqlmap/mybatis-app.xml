@@ -26,10 +26,13 @@
 		<!-- 产品管理 start -->
 		<typeAlias alias="TA-CATEGORY"
 			type="org.yy.qrcodeseller.model.product.Category" />
+
+		<typeAlias alias="TA-PRODUCT" type="org.yy.qrcodeseller.model.product.Product" />
+		<typeAlias alias="TA-PRODUCT-DTO"
+			type="org.yy.qrcodeseller.dto.product.ProductDto" />
 		<!-- 产品管理 end -->
 
-
-
 	</typeAliases>
+	
 
 </configuration>

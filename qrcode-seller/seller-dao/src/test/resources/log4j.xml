@@ -50,7 +50,7 @@
 
 	<!-- 为单独的类或包指定日志配置 -->
 	<logger name="org.yy.qrcodeseller.dao">
-		<level value="info" />
+		<level value="debug" />
 		<appender-ref ref="myConsole" />
 	</logger>
 

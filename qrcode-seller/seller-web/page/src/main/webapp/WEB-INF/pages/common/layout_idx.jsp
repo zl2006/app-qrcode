@@ -8,6 +8,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href='${applicationScope.pageConfig["resources.path"] }/css/pure/0.6.0/pure-min.css'>
     <link rel="stylesheet" href='${applicationScope.pageConfig["resources.path"] }/css/site/site.css'>
+	<script type="text/javascript" src='${applicationScope.pageConfig["resources.path"] }/js/normal/base-require/2.1.11/require.min.js'></script>
+<script type="text/javascript" src='${applicationScope.pageConfig["resources.path"] }/app/qrcode-seller/js/require.config.js'></script>
 </head>
 <body>
 	<tiles:insertAttribute name="top" />

@@ -22,9 +22,9 @@
 	</definition>
 
 	<!-- 其它页 -->
-	<definition name="tiles_base/*" extends="base.definition"
+	<definition name="tiles_base/*/*" extends="base.definition"
 		template="/WEB-INF/pages/common/layout_base.jsp">
-		<put-attribute name="body" value="/{1}.jsp" />
+		<put-attribute name="body" value="/WEB-INF/pages/{1}/{2}.jsp" />
 	</definition>
 
 

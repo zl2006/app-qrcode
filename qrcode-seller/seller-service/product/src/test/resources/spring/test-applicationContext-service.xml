@@ -1,0 +1,48 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+	<context:component-scan base-package="org.yy.qrcodeseller.service.product"></context:component-scan>
+
+	<!--数据源定义 -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+	<!-- mybatis配置 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations" value="classpath*:sqlmap/mapping-*.xml" />
+		<property name="configLocation" value="classpath:sqlmap/mybatis-app.xml"></property>
+	</bean>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="org.yy.qrcodeseller.dao.product" />
+	</bean>
+	<!-- 分页拦截机制 -->
+	<bean id="pageInterceptor" class="org.yy.framework.base.dao.PageInterceptor"></bean>
+	<aop:config proxy-target-class="false">
+		<aop:pointcut id="pagePointCut"
+			expression="execution(* org.yy.qrcodeseller.dao..*(..))" />
+		<aop:advisor advice-ref="pageInterceptor" pointcut-ref="pagePointCut" />
+	</aop:config>
+
+	<!-- 数据准备 -->
+	<bean class="org.yy.qrcodeseller.service.product.impl.InitData"
+		init-method="init">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<import resource="classpath*:spring/applicationContext*.xml" />
+</beans>

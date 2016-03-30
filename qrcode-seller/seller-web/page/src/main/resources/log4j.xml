@@ -37,7 +37,7 @@
 	</logger>
 	
 	<!-- mapping文件中namespace为SYSTEM的SQL日志 -->
-	<logger name="SYSTEM">
+	<logger name="org.yy.qrcodeseller">
 		<level value="debug" />
 	</logger>
 

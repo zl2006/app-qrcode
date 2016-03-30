@@ -12,6 +12,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.yy.framework.base.controller.AbstractController;
 import org.yy.qrcodeseller.dto.product.ProductDto;
@@ -38,7 +39,7 @@ public class ProductController extends AbstractController {
     }
     
     @RequestMapping("/list")
-    public ModelAndView list(ProductDto productDto) {
+    public ModelAndView list(@RequestParam(required = false) ProductDto productDto) {
         return processSuccess(moduleName + "list", productService.findProduct(productDto));
     }
     

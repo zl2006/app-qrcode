@@ -9,6 +9,7 @@
 package org.yy.qrcodeseller.dao;
 
 import java.io.InputStreamReader;
+import java.sql.Connection;
 
 import javax.sql.DataSource;
 
@@ -29,19 +30,20 @@ public class InitData {
     
     public void init()
         throws Exception {
+        Connection connect = dataSource.getConnection();
         //清理数据库
-        ScriptRunner r = new ScriptRunner(dataSource.getConnection());
+        ScriptRunner r = new ScriptRunner(connect);
         InputStreamReader isr =
             new InputStreamReader(CategoryDao.class.getClassLoader().getResourceAsStream("sql/clear.sql"));
         r.runScript(isr);
         
-        isr =
-            new InputStreamReader(CategoryDao.class.getClassLoader().getResourceAsStream("sql/createtable.sql"));
+        isr = new InputStreamReader(CategoryDao.class.getClassLoader().getResourceAsStream("sql/createtable.sql"));
         r.runScript(isr);
         
-        isr =
-            new InputStreamReader(CategoryDao.class.getClassLoader().getResourceAsStream("sql/initdata.sql"));
+        isr = new InputStreamReader(CategoryDao.class.getClassLoader().getResourceAsStream("sql/initdata.sql"));
         r.runScript(isr);
+        
+        connect.close();
         
     }
     

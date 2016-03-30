@@ -61,7 +61,7 @@
 			AND a.PRD_CODE = #{prdCode}
 		</if>
 		<if test="name != null and name !=''">
-			AND a.NAME like  '%' ||  #{name}
+			AND a.NAME like  concat(  #{name} , '%')
 		</if>
 	</sql>
 	

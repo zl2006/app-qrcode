@@ -10,6 +10,11 @@
     <link rel="stylesheet" href='${applicationScope.pageConfig["resources.path"] }/css/site/site.css'>
     <script type="text/javascript" src='${applicationScope.pageConfig["resources.path"] }/js/normal/base-require/2.1.11/require.min.js'></script>
 	<script type="text/javascript" src='${applicationScope.pageConfig["resources.path"] }/app/qrcode-seller/js/require.config.js'></script>
+	<%
+	    String path = request.getContextPath();
+		String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path;
+		request.setAttribute("basePath", basePath);
+	%>
 </head>
 <body>
 	<tiles:insertAttribute name="top" />

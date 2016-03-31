@@ -38,8 +38,8 @@
 	</logger>
 
 	<!-- 为单独的类或包(user)指定日志配置 -->
-	<logger name="user" >
-		<level value="info" />
+	<logger name="org.yy.qrcodeseller" >
+		<level value="debug" />
 		<appender-ref ref="myConsole" />
 	</logger>
 

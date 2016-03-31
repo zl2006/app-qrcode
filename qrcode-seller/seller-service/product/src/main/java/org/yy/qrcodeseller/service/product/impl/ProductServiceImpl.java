@@ -8,9 +8,14 @@
 */
 package org.yy.qrcodeseller.service.product.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import org.yy.framework.base.validator.ValidateError;
+import org.yy.framework.base.validator.ValidateService;
+import org.yy.framework.basedata.exception.ServiceException;
 import org.yy.framework.basedata.query.ResultDto;
 import org.yy.qrcodeseller.dao.product.ProductDao;
 import org.yy.qrcodeseller.dto.product.ProductDto;
@@ -32,7 +37,14 @@ public class ProductServiceImpl implements ProductService {
     
     /** {@inheritDoc} */
     @Override
-    public ResultDto<Product> findProduct(ProductDto productDto) {
+    public ResultDto<Product> findProduct(ProductDto productDto)
+        throws ServiceException {
+        //1,校验用户信息
+        List<ValidateError> errors = ValidateService.validate(productDto, "sellerNick");
+        if (errors.size() > 0) {
+            throw new ServiceException("FINDPRODUCT_SELLER_ERROR", errors.toString());
+        }
+        
         return productDao.findProductForPage(productDto);
     }
     

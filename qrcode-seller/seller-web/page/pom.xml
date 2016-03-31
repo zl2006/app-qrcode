@@ -20,12 +20,6 @@
 			<version>${project.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.yy.app-sso</groupId>
-			<artifactId>sso-client</artifactId>
-			<version>1.0</version>
-		</dependency>
-
 	</dependencies>
 
 </project>

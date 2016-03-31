@@ -35,7 +35,8 @@ public class ProductServiceImplTest extends AbstractSpringTest {
      * Test method for {@link org.yy.qrcodeseller.service.product.impl.ProductServiceImpl#findProduct(org.yy.qrcodeseller.dto.product.ProductDto)}.
      */
     @Test
-    public void testFindProduct() {
+    public void testFindProduct()
+        throws Exception {
         ProductDto dto = new ProductDto();
         dto.setName("红米");
         ResultDto<Product> rs = productService.findProduct(dto);

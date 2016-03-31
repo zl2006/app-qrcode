@@ -8,6 +8,7 @@
 */
 package org.yy.qrcodeseller.service.product;
 
+import org.yy.framework.basedata.exception.ServiceException;
 import org.yy.framework.basedata.query.ResultDto;
 import org.yy.qrcodeseller.dto.product.ProductDto;
 import org.yy.qrcodeseller.model.product.Product;
@@ -26,5 +27,5 @@ public interface ProductService {
      * @param productDto 查询条件
      * @return 产品列表
      */
-    public ResultDto<Product> findProduct(ProductDto productDto);
+    public ResultDto<Product> findProduct(ProductDto productDto)throws ServiceException;
 }

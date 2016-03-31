@@ -4,7 +4,6 @@
 <div id="footer">
     Copyright @2011-2014 http://www.aibaicai.com/湖南YY工作室 版权所有 邮编：414000
 </div><!--footer end-->
-
 <script type="text/javascript">
     requirejs(['jqsuperslide','sticky'], function (slide,sticky) {
         sticky("#menu", {top:0, left:0});

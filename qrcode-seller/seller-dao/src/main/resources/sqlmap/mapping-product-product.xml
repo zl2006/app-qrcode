@@ -63,6 +63,9 @@
 		<if test="status != null">
 			AND a.STATUS = #{status}
 		</if>
+		<if test="sellerNick != null">
+			AND a.SELLER_NICK = #{sellerNick}
+		</if>
 		<if test="name != null and name !=''">
 			AND a.NAME like  concat(  #{name} , '%')
 		</if>

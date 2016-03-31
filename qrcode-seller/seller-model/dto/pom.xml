@@ -15,7 +15,7 @@
 
 
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>org.yy.qrcodeseller</groupId>
 			<artifactId>model</artifactId>
@@ -24,6 +24,17 @@
 		<dependency>
 			<groupId>org.yy.framework</groupId>
 			<artifactId>framework-basedata</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.yy.framework</groupId>
+			<artifactId>framework-webframe</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.yy.framework</groupId>
+			<artifactId>framework-document</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
 	</dependencies>

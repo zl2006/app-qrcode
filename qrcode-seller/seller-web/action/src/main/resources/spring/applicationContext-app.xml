@@ -72,19 +72,10 @@
 	<!-- 事务配置 -->
 	<tx:advice id="txAdvice" transaction-manager="txManager">
 		<tx:attributes>
-			<tx:method name="save*" propagation="REQUIRED"
-				rollback-for="java.lang.Throwable" />
-			<tx:method name="delete*" propagation="REQUIRED"
-				rollback-for="java.lang.Throwable" />
-			<tx:method name="update*" propagation="REQUIRED"
-				rollback-for="java.lang.Throwable" />
-			<tx:method name="insert*" propagation="REQUIRED"
-				rollback-for="java.lang.Throwable" />
-			<tx:method name="config*" propagation="REQUIRED"
-				rollback-for="java.lang.Throwable" />
-			<tx:method name="edit*" propagation="REQUIRED"
-				rollback-for="java.lang.Throwable" />
-			<tx:method name="*" read-only="true" />
+			<tx:method name="select*"  read-only="true" />
+			<tx:method name="query*"  read-only="true" />
+			<tx:method name="find*"  read-only="true" />
+			<tx:method name="*" propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
 		</tx:attributes>
 	</tx:advice>
 	<aop:config>

@@ -39,9 +39,11 @@ public class ProductServiceImplTest extends AbstractSpringTest {
         throws Exception {
         ProductDto dto = new ProductDto();
         dto.setName("红米");
+        dto.setSellerNick("18665867002");
         ResultDto<Product> rs = productService.findProduct(dto);
         Assert.assertTrue(rs.getPagination().getTotal() >= 2);
         dto = new ProductDto();
+        dto.setSellerNick("18665867002");
         dto.setCategoryID(2);
         rs = productService.findProduct(dto);
         Assert.assertTrue(rs.getPagination().getTotal() >= 3);

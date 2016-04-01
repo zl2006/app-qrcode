@@ -35,7 +35,9 @@ public class ProductControllerTest extends AbstractMVCSpringTest {
     public void testList()
         throws Exception {
         MvcResult result =
-            mockMvc.perform(MockMvcRequestBuilders.get("/product/list").param("name", "红米"))
+            mockMvc.perform(MockMvcRequestBuilders.get("/product/list")
+                .sessionAttr("_userid_", "18665867002")
+                .param("name", "红米"))
                 .andDo(MockMvcResultHandlers.print())
                 .andReturn();
         ResultDto<Product> productResult = (ResultDto<Product>)result.getModelAndView().getModel().get("data");
